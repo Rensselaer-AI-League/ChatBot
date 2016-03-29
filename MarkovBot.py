@@ -105,7 +105,7 @@ class MarkovChain:
             if line_counter > lines: break
         
         
-def make_shakespear_chain():
+def make_shakespear_chain(lines = 300):
     #The source filename is called shakespeare.txt
     source_filename = "shakespeare.txt"
     #The dump file is called dump_shakespear.pickle
@@ -123,11 +123,11 @@ def make_shakespear_chain():
         print "Training on shakespeare...."
         shakespear = open("shakespeare.txt","r")
         chain = MarkovChain()
-        chain.train(file = shakespear,lines = 300)
+        chain.train(file = shakespear,lines)
         return chain
 
 if __name__ == "__main__":
     #Make a markov chain that is trained to speak like shakespear
-    chain = make_shakespear_chain()
+    chain = make_shakespear_chain(lines = 300)
     print len(chain.node_dict.keys())
     
