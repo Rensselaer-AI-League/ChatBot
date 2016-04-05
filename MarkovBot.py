@@ -123,7 +123,7 @@ def make_shakespear_chain(lines = 300):
         print "Training on shakespeare...."
         shakespear = open("shakespeare.txt","r")
         chain = MarkovChain()
-        chain.train(file = shakespear,lines)
+        chain.train(file = shakespear,lines = lines)
         return chain
 
 if __name__ == "__main__":
